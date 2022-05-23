@@ -1,0 +1,100 @@
+﻿<Page 
+    x:Class="WPF_Page.JegyrendelesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:WPF_Page"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" 
+    d:DesignWidth="800"
+    Title="JegyrendelesPage">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Margin="5 10"
+            Content="Távolság:"/>
+
+        <TextBox
+            x:Name="tbTavolsag"
+            Grid.Column="1"
+            Width="100"
+            Margin="5 10"/>
+
+        <Label
+            Margin="5 10"
+            Grid.Row="1"
+            Content="Jegy típusa:"/>
+
+        <ComboBox
+            x:Name="cbTipus"
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            Width="100"
+            Margin="5 10">
+            
+            <ComboBoxItem 
+                IsSelected="True"
+                Content="1. osztály"
+                Tag="1,5"/>
+            
+            <ComboBoxItem 
+                Content="2. osztály"
+                Tag="1"/>
+            
+        </ComboBox>
+
+        <Label
+            Grid.Row="2"
+            Content="Kedvezmény:"
+            Margin="5 10"
+            VerticalAlignment="Center"/>
+
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1">
+
+            <RadioButton 
+                Tag="0,5"
+                Margin="5 5 5 0"
+                Content="50%-os kedvezmény"
+                Checked="RadioButton_Checked"/>
+
+            <RadioButton 
+                Tag="0,3"
+                Margin="5 5 5 0"
+                Content="70%-os kedvezmény"
+                Checked="RadioButton_Checked"/>
+
+            <RadioButton 
+                Tag="1"
+                IsChecked="True"
+                Margin="5 5 5 5"
+                Content="Nincs kedvezmény"
+                Checked="RadioButton_Checked"/>
+
+        </StackPanel>
+
+        <Button
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Content="Lássuk"
+            Margin="5 10" Click="Button_Click"/>
+
+    </Grid>
+    
+</Page>

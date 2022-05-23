@@ -1,0 +1,60 @@
+﻿<Page 
+    x:Class="WPF_Page.HomersekletPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:WPF_Page"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" 
+    d:DesignWidth="800"
+    Title="Homerseklet">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Margin="5">
+            Hőmérséklet (°C):
+        </Label>
+
+        <TextBox 
+            x:Name="tbHomerseklet"
+            Margin="5 10"
+            VerticalAlignment="Top"
+            Width="100"
+            Grid.Column="1"/>
+
+        <Button 
+            Height="{ Binding Height, ElementName=tbHomerseklet}"
+            Padding="10 0"
+            Margin="5 10"
+            VerticalAlignment="Top"
+            Grid.Column="2"
+            Content="Átvált" Click="Button_Click"/>
+
+        <Label 
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="5 10"
+            x:Name="lblKelvin"/>
+
+        <Label 
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="5 10"
+            x:Name="lblFahrenheit"/>
+
+    </Grid>
+    
+</Page>
